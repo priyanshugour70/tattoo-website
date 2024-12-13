@@ -1,114 +1,79 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-scroll"; // Import from react-scroll
-import { HiMenu, HiX } from "react-icons/hi"; // Hamburger and close icons
+import React, { useState, useRef } from "react";
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const images = [
+    "https://w0.peakpx.com/wallpaper/758/290/HD-wallpaper-back-tattoos-f1-graphy-body-art-tattoo-wide-screen-portrait.jpg",
+    "https://png.pngtree.com/thumb_back/fh260/background/20230613/pngtree-the-body-builder-with-tattoos-posing-for-a-picture-image_2954450.jpg",
+  ];
 
-  // Track scroll position
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50); // Adjust the value as needed
-    };
-    window.addEventListener("scroll", handleScroll);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const startX = useRef(0); // Track the starting mouse position
+  const isDragging = useRef(false); // Track whether the user is currently dragging
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  // Handle mouse down (start of drag)
+  const handleMouseDown = (e) => {
+    isDragging.current = true;
+    startX.current = e.clientX; // Store the starting X position of the mouse
+  };
+
+  // Handle mouse move (dragging)
+  const handleMouseMove = (e) => {
+    if (!isDragging.current) return;
+
+    // Determine the direction of the drag
+    const diffX = e.clientX - startX.current;
+
+    if (diffX > 50) {
+      // Dragged to the right, move to the next slide
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
+      isDragging.current = false; // End the drag
+    } else if (diffX < -50) {
+      // Dragged to the left, move to the previous slide
+      setCurrentSlide(
+        (prevSlide) => (prevSlide - 1 + images.length) % images.length
+      );
+      isDragging.current = false; // End the drag
+    }
+  };
+
+  // Handle mouse up (end of drag)
+  const handleMouseUp = () => {
+    isDragging.current = false;
+  };
 
   return (
-    <header
-      className={`fixed top-0 w-full z-50 text-white bg-gray-700 ${
-        isScrolled ? "py-6 shadow-lg" : "py-8"
-      } transition-all duration-300`}
+    <div
+      className="relative w-full h-[90vh] overflow-hidden"
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseUp} // Ensure drag ends if mouse leaves the element
     >
-      <div className="container mx-auto flex flex-col lg:flex-row justify-center items-center px-6">
-        {/* Navigation Links */}
-        <nav
-          className={`absolute lg:relative top-16 lg:top-auto left-0 w-full lg:w-auto bg-gray-700 lg:bg-transparent flex justify-center items-center transition-all duration-300 ${
-            isMenuOpen ? "block" : "hidden lg:block"
-          }`}
-        >
-          <ul className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-center p-4 lg:p-0">
-            <li>
-              <Link
-                to="home"
-                smooth={true}
-                duration={500}
-                className="hover:text-gray-400 cursor-pointer"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="artists"
-                smooth={true}
-                duration={500}
-                className="hover:text-gray-400 cursor-pointer"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Artists
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="gallery"
-                smooth={true}
-                duration={500}
-                className="hover:text-gray-400 cursor-pointer"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Gallery
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="portfolio"
-                smooth={true}
-                duration={500}
-                className="hover:text-gray-400 cursor-pointer"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="FAQ"
-                smooth={true}
-                duration={500}
-                className="hover:text-gray-400 cursor-pointer"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                FAQ
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="contact"
-                smooth={true}
-                duration={500}
-                className="hover:text-gray-400 cursor-pointer"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </nav>
-        {/* Hamburger Menu for Mobile */}
-        <div className="lg:hidden absolute top-1 right-4">
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="text-white focus:outline-none"
-          >
-            {isMenuOpen ? <HiX size={28} /> : <HiMenu size={28} />}
-          </button>
-        </div>
+      {/* Carousel Image */}
+      <img
+        src={images[currentSlide]}
+        alt={`Slide ${currentSlide + 1}`}
+        className="w-full h-full object-cover"
+      />
+
+      {/* Fixed Text in Center */}
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-4xl font-bold">
+        <p>Your Fixed Text Here</p>
       </div>
-    </header>
+
+      {/* Dots Navigation */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-3 h-3 rounded-full ${
+              currentSlide === index ? "bg-gray-900" : "bg-gray-400"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
   );
 };
 

@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import contactData from "../data/contact.json";
 
-const Contact = () => {
+const ContactUs = () => {
   const [isMapVisible, setIsMapVisible] = useState(false);
 
   const toggleMapVisibility = () => {
@@ -13,11 +13,9 @@ const Contact = () => {
     <div className="contact-page bg-black text-white p-8">
       <div className="text-center">
         <h1 className="text-3xl font-bold uppercase mb-4">
-          <div className="bg-[#d2d9c7] text-black inline-block px-8 py-2 rounded-full">
-            <h1 className="text-3xl font-semibold uppercase tracking-wide">
-              CONTACT
-            </h1>
-          </div>
+          <h1 className="text-5xl font-semibold uppercase tracking-wide">
+            CONTACT
+          </h1>
         </h1>
         <p className="mb-8">Visit us or send us an email</p>
       </div>
@@ -95,7 +93,7 @@ const Contact = () => {
         <h3 className="text-lg font-bold mb-4">Map</h3>
         <button
           onClick={toggleMapVisibility}
-          className="py-2 px-4 bg-gray-700 text-white rounded hover:bg-gray-600 transition-all"
+          className="py-2 px-4 bg-[#d2d9c7] text-black rounded hover:bg-gray-600 transition-all"
         >
           {isMapVisible ? "Hide Map" : "Show Map"}
         </button>
@@ -118,4 +116,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactUs;

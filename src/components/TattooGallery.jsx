@@ -51,7 +51,7 @@ const imagesData = [
   },
 ];
 
-const SelectiveGallery = () => {
+const TattooGallery = () => {
   const [selectedType, setSelectedType] = useState("ALL");
   const [modalOpen, setModalOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(null);
@@ -91,16 +91,14 @@ const SelectiveGallery = () => {
         {filteredImages.map((img) => (
           <div
             key={img.name}
-            className="relative group cursor-pointer"
+            className="relative group cursor-pointer border border-gray-300 p-2 bg-gray-900"
             onClick={() => handleImageClick(img)}
           >
-            <img
-              src={img.url}
-              alt={img.description}
-              className="w-full h-48 object-cover rounded-lg"
-            />
+            <img src={img.url} alt={img.description} className="w-full h-48" />
             <div className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-              <p className="text-white text-lg">{img.name}</p>
+              <p className="text-white text-lg font-bold border border-gray-300 px-4 py-2">
+                {img.name}
+              </p>
             </div>
           </div>
         ))}
@@ -122,14 +120,16 @@ const SelectiveGallery = () => {
               className="w-full h-64 object-contain mb-4 rounded"
             />
             <h3 className="text-2xl text-white mb-2">{currentImage.name}</h3>
-            <p className="text-gray-300">{currentImage.description}</p>
             <div className="flex justify-between mt-4">
               <button
                 className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600"
                 onClick={() => {
                   const index = filteredImages.indexOf(currentImage);
                   setCurrentImage(
-                    filteredImages[(index + filteredImages.length - 1) % filteredImages.length]
+                    filteredImages[
+                      (index + filteredImages.length - 1) %
+                        filteredImages.length
+                    ]
                   );
                 }}
               >
@@ -139,7 +139,9 @@ const SelectiveGallery = () => {
                 className="px-4 py-2 bg-gray-700 text-white rounded hover:bg-gray-600"
                 onClick={() => {
                   const index = filteredImages.indexOf(currentImage);
-                  setCurrentImage(filteredImages[(index + 1) % filteredImages.length]);
+                  setCurrentImage(
+                    filteredImages[(index + 1) % filteredImages.length]
+                  );
                 }}
               >
                 Next
@@ -148,8 +150,17 @@ const SelectiveGallery = () => {
           </div>
         </div>
       )}
+
+      <div className="text-center my-6">
+        <a
+          className="py-2 px-4 bg-[#d2d9c7] text-black rounded hover:bg-gray-600 transition-all"
+          href="/tattoo"
+        >
+          View More
+        </a>
+      </div>
     </div>
   );
 };
 
-export default SelectiveGallery;
+export default TattooGallery;

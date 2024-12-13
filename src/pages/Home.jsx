@@ -1,74 +1,57 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { BsArrowDown } from "react-icons/bs";
-
-// Import modules like this:
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import React from "react";
+import Header from "../components/Header";
+import AboutOurStudio from "../components/AboutOurStudio";
+import AboutTheArtist from "../components/AboutTheArtist";
+import TattooGallery from "../components/TattooGallery";
+import ArtTshirtGallery from "../components/ArtTshirtsGallery";
+import PrintedTshirtGallery from "../components/PrintedTshirtGallery";
+import ShoesGallery from "../components/ShoesGallery";
+import VideoEditsGallery from "../components/VideoEditsGallery";
+import ContactUs from "../components/ContactUs";
 
 const Home = () => {
-  const slides = [
-    {
-      image:
-        "https://images.pexels.com/photos/2183131/pexels-photo-2183131.jpeg?cs=srgb&dl=pexels-kevinbidwell-2183131.jpg&fm=jpg",
-      title: "Welcome to Our World",
-      subtitle: "Discover the beauty of creativity",
-    },
-    {
-      image:
-        "https://t4.ftcdn.net/jpg/07/71/43/49/360_F_771434967_SF93zFA0sbmylJUWg6HmT6BqrAk8sO5q.jpg",
-      title: "Unleash Your Potential",
-      subtitle: "Your journey begins here",
-    },
-    {
-      image:
-        "https://images.pexels.com/photos/2126124/pexels-photo-2126124.jpeg?cs=srgb&dl=pexels-brett-sayles-2126124.jpg&fm=jpg",
-      title: "Transform Your Vision",
-      subtitle: "Creating memories that last forever",
-    },
-  ];
-
   return (
-    <div className="h-screen w-screen overflow-hidden">
-      <Swiper
-        modules={[Autoplay, Navigation, Pagination]}
-        spaceBetween={0}
-        slidesPerView={1}
-        navigation
-        pagination={{ clickable: true }}
-        autoplay={{ delay: 5000 }}
-        loop
-        className="h-full w-full"
-      >
-        {slides.map((slide, index) => (
-          <SwiperSlide key={index}>
-            <div
-              className="h-screen w-screen flex justify-center items-center bg-cover bg-center relative"
-              style={{
-                backgroundImage: `url(${slide.image})`,
-              }}
-            >
-              {/* Overlay for better readability */}
-              <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+    <div
+      className="bg-fixed bg-cover bg-center transition duration-500 ease-in-out"
+      style={{
+        backgroundImage: `url('https://images.pexels.com/photos/2183131/pexels-photo-2183131.jpeg?cs=srgb&dl=pexels-kevinbidwell-2183131.jpg&fm=jpg')`,
+      }}
+    >
+      <section id="Header">
+        <Header />
+      </section>
 
-              {/* Fixed Text */}
-              <div className="absolute z-10 text-white text-center flex flex-col items-center space-y-4">
-                <h1 className="text-5xl md:text-7xl font-bold italic">
-                  {slide.title}
-                </h1>
-                <p className="text-xl md:text-3xl">{slide.subtitle}</p>
+      <section id="AboutStudio" className="py-20">
+        <AboutOurStudio />
+      </section>
 
-                {/* Down Arrow */}
-                <div className="mt-6 flex flex-col items-center">
-                  <span className="text-lg">Scroll Down</span>
-                  <BsArrowDown className="mt-2 text-3xl animate-bounce" />
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <section id="AboutArtist" className="py-20">
+        <AboutTheArtist />
+      </section>
+
+      <section id="TattooGallery" className="py-20">
+        <TattooGallery />
+      </section>
+
+      <section id="ArtTshirts" className="py-20">
+        <ArtTshirtGallery />
+      </section>
+
+      <section id="PrintedTshirts" className="py-20">
+        <PrintedTshirtGallery />
+      </section>
+
+      <section id="ShoesGallery" className="py-20">
+        <ShoesGallery />
+      </section>
+
+      <section id="VideoEdits" className="py-20">
+        <VideoEditsGallery />
+      </section>
+
+      <section id="ContactUs" className="py-20">
+        <ContactUs />
+      </section>
     </div>
   );
 };

@@ -1,0 +1,13 @@
+{
+    "logo": "/logo.png",
+    "title": "The House of Tattoo Studio",
+    "contactInfo": {
+      "phone": "+91 90091 48003",
+      "email": "thehouseoftattoos6@gmail.com",
+      "address": "109 Chitrkoot Apartment Indrapuri Sector C"
+    },
+    "socialLinks": {
+      "facebook": "https://www.facebook.com",
+      "instagram": "https://www.instagram.com"
+    }
+  }
