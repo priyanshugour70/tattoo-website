@@ -1,0 +1,14 @@
+{
+  "address": "Your Street Name 123, City Name",
+  "phone": "222/111-1111",
+  "website": "example.com",
+  "info": "Lorem ipsum",
+  "socialLinks": [
+    { "platform": "facebook", "url": "https://facebook.com" },
+    { "platform": "twitter", "url": "https://twitter.com" },
+    { "platform": "google", "url": "https://google.com" },
+    { "platform": "pinterest", "url": "https://pinterest.com" },
+    { "platform": "youtube", "url": "https://youtube.com" }
+  ],
+  "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48336.68026702626!2d-74.04708605906556!3d40.712728113202055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQyJzQ1LjkiTiA3NMKwMDInNDkuMCJX!5e0!3m2!1sen!2sus!4v1689936297372!5m2!1sen!2sus"
+}
