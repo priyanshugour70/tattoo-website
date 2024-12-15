@@ -1,8 +1,12 @@
 import React from 'react'
+import TattooHero from '../components/TattooHero'
 
 const Tattoo = () => {
   return (
-    <div>Tattoo</div>
+    <div>
+      <TattooHero />
+      <p>Tattoo</p>
+    </div>
   )
 }
 

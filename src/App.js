@@ -12,16 +12,23 @@ import Footer from "./components/Footer";
 const App = () => {
   return (
     <Router>
-      <div>
+      <div className="flex flex-col min-h-screen">
+        {/* Navbar */}
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/tattoo" element={<Tattoo />} />
-          <Route path="/art-tshirt" element={<ArtTshirt />} />
-          <Route path="/printed-tshirt" element={<PrintedTshirt />} />
-          <Route path="/shoes" element={<Shoes />} />
-          <Route path="/video-edits" element={<VideoEdits />} />
-        </Routes>
+
+        {/* Main Content */}
+        <div className="flex-1 pt-16 md:pt-20">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/tattoo" element={<Tattoo />} />
+            <Route path="/art-tshirt" element={<ArtTshirt />} />
+            <Route path="/printed-tshirt" element={<PrintedTshirt />} />
+            <Route path="/shoes" element={<Shoes />} />
+            <Route path="/video-edits" element={<VideoEdits />} />
+          </Routes>
+        </div>
+
+        {/* Footer */}
         <Footer />
       </div>
     </Router>

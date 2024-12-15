@@ -21,35 +21,35 @@ const Home = () => {
         <Header />
       </section>
 
-      <section id="AboutStudio" className="py-20">
+      <section id="AboutStudio" className="py-10">
         <AboutOurStudio />
       </section>
 
-      <section id="AboutArtist" className="py-20">
+      <section id="AboutArtist" className="py-10">
         <AboutTheArtist />
       </section>
 
-      <section id="TattooGallery" className="py-20">
+      <section id="TattooGallery" className="py-10">
         <TattooGallery />
       </section>
 
-      <section id="ArtTshirts" className="py-20">
+      <section id="ArtTshirts" className="py-10">
         <ArtTshirtGallery />
       </section>
 
-      <section id="PrintedTshirts" className="py-20">
+      <section id="PrintedTshirts" className="py-10">
         <PrintedTshirtGallery />
       </section>
 
-      <section id="ShoesGallery" className="py-20">
+      <section id="ShoesGallery" className="py-10">
         <ShoesGallery />
       </section>
 
-      <section id="VideoEdits" className="py-20">
+      <section id="VideoEdits" className="py-10">
         <VideoEditsGallery />
       </section>
 
-      <section id="ContactUs" className="py-20">
+      <section id="ContactUs" className="py-10">
         <ContactUs />
       </section>
     </div>

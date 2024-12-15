@@ -1,16 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom"; // Using Link from react-router-dom
 import navItems from "../data/navbar.json";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Detect if user has scrolled down
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <nav className="bg-gray-900 text-white">
-      <div className="lg:px-32 container px-4 flex justify-between items-center py-4">
+    <nav
+      className={`bg-gray-900 text-white fixed w-full z-50 transition-all duration-300 ${
+        isScrolled ? "py-2 shadow-lg" : "py-4"
+      }`}
+    >
+      <div className="lg:px-32 container px-4 flex justify-between items-center">
         {/* Logo */}
         <a href="/" className="text-2xl font-bold">
-          <img src="/logo.png" alt="Logo" className="w-12 mx-auto mb-2" />
+          <img
+            src="/logo.png"
+            alt="Logo"
+            className={`mx-auto mb-2 transition-all duration-300 ${
+              isScrolled ? "w-8" : "w-12"
+            }`}
+          />
         </a>
 
         {/* Hamburger Menu for Mobile */}
@@ -29,7 +56,11 @@ const Navbar = () => {
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth={2}
-              d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+              d={
+                isOpen
+                  ? "M6 18L18 6M6 6l12 12"
+                  : "M4 6h16M4 12h16M4 18h16"
+              }
             />
           </svg>
         </button>
@@ -39,7 +70,7 @@ const Navbar = () => {
           {navItems.map((item) => (
             <Link
               key={item.name}
-              to={item.path} // Use Link to navigate without reloading
+              to={item.path}
               className="hover:text-gray-400 transition"
             >
               {item.name}
@@ -56,7 +87,7 @@ const Navbar = () => {
               key={item.name}
               to={item.path}
               className="block px-4 py-2 hover:bg-gray-700 transition"
-              onClick={() => setIsOpen(false)} // Close the menu when an item is clicked
+              onClick={() => setIsOpen(false)}
             >
               {item.name}
             </Link>

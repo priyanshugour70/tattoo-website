@@ -5,49 +5,41 @@ const imagesData = [
     name: "Dragon Koi",
     type: "TAG1",
     url: "https://rukminim2.flixcart.com/image/850/1000/xif0q/tattoo/w/l/u/5-1-hb-22-temporary-tattoowala-10-original-imaghpqkxq8wjghw.jpeg?q=20&crop=false",
-    description: "A beautiful koi fish design with a dragon element.",
   },
   {
     name: "Wolf Art",
     type: "TAG2",
     url: "https://rukminim2.flixcart.com/image/850/1000/xif0q/tattoo/w/l/u/5-1-hb-22-temporary-tattoowala-10-original-imaghpqkxq8wjghw.jpeg?q=20&crop=false",
-    description: "A bold wolf illustration.",
   },
   {
     name: "Bald Warrior",
     type: "TAG3",
     url: "https://rukminim2.flixcart.com/image/850/1000/xif0q/tattoo/w/l/u/5-1-hb-22-temporary-tattoowala-10-original-imaghpqkxq8wjghw.jpeg?q=20&crop=false",
-    description: "A mysterious bald warrior tattoo design.",
   },
   {
     name: "Phoenix Fire",
     type: "TAG1",
     url: "https://rukminim2.flixcart.com/image/850/1000/xif0q/tattoo/w/l/u/5-1-hb-22-temporary-tattoowala-10-original-imaghpqkxq8wjghw.jpeg?q=20&crop=false",
-    description: "A majestic phoenix engulfed in flames.",
   },
   {
     name: "Geometric Wolf",
     type: "TAG2",
     url: "https://rukminim2.flixcart.com/image/850/1000/xif0q/tattoo/w/l/u/5-1-hb-22-temporary-tattoowala-10-original-imaghpqkxq8wjghw.jpeg?q=20&crop=false",
-    description: "A modern take on the classic wolf design.",
   },
   {
     name: "Lotus Mandala",
     type: "TAG3",
     url: "https://rukminim2.flixcart.com/image/850/1000/xif0q/tattoo/w/l/u/5-1-hb-22-temporary-tattoowala-10-original-imaghpqkxq8wjghw.jpeg?q=20&crop=false",
-    description: "A peaceful mandala with a lotus centerpiece.",
   },
   {
     name: "Tribal Dragon",
     type: "TAG1",
     url: "https://rukminim2.flixcart.com/image/850/1000/xif0q/tattoo/w/l/u/5-1-hb-22-temporary-tattoowala-10-original-imaghpqkxq8wjghw.jpeg?q=20&crop=false",
-    description: "A fierce tribal dragon tattoo.",
   },
   {
     name: "Butterfly Ink",
     type: "TAG2",
     url: "https://rukminim2.flixcart.com/image/850/1000/xif0q/tattoo/w/l/u/5-1-hb-22-temporary-tattoowala-10-original-imaghpqkxq8wjghw.jpeg?q=20&crop=false",
-    description: "A delicate butterfly tattoo with intricate details.",
   },
 ];
 
