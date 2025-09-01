@@ -8,6 +8,10 @@
       "path": "/tattoo"
     },
     {
+      "name": "Gallery",
+      "path": "/gallery"
+    },
+    {
       "name": "Art T-shirt",
       "path": "/art-tshirt"
     },

@@ -12,11 +12,14 @@ import ContactUs from "../components/ContactUs";
 const Home = () => {
   return (
     <div
-      className="bg-fixed bg-cover bg-center transition duration-500 ease-in-out"
+      className="bg-fixed bg-cover bg-center transition duration-500 ease-in-out relative"
       style={{
-        backgroundImage: `url('https://images.pexels.com/photos/2183131/pexels-photo-2183131.jpeg?cs=srgb&dl=pexels-kevinbidwell-2183131.jpg&fm=jpg')`,
+        backgroundImage: `url('/images/tattoo/mandala-tattoo-design-ideas.jpg')`,
       }}
     >
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/60 z-0"></div>
+      <div className="relative z-10">
       <section id="Header">
         <Header />
       </section>
@@ -52,6 +55,7 @@ const Home = () => {
       <section id="ContactUs" className="py-10">
         <ContactUs />
       </section>
+      </div>
     </div>
   );
 };

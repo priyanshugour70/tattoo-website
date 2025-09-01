@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Tattoo from "./pages/Tattoo";
+import Gallery from "./pages/Gallery";
 import ArtTshirt from "./pages/ArtTshirt";
 import PrintedTshirt from "./pages/PrintedTshirt";
 import Shoes from "./pages/Shoes";
@@ -21,6 +22,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/tattoo" element={<Tattoo />} />
+            <Route path="/gallery" element={<Gallery />} />
             <Route path="/art-tshirt" element={<ArtTshirt />} />
             <Route path="/printed-tshirt" element={<PrintedTshirt />} />
             <Route path="/shoes" element={<Shoes />} />

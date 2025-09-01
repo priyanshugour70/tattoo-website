@@ -26,11 +26,18 @@ const AboutOurStudio = () => {
 
         {/* Right Section */}
         <div className="lg:w-1/2 relative">
-          <img
-            src="/logo.png"
-            alt="Tattoo Process"
-            className="object-cover w-50"
-          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+            <img
+              src="/images/ambience/studio-interior-1.jpg"
+              alt="Studio Interior 1"
+              className="object-cover w-full h-64 rounded-lg shadow-lg"
+            />
+            <img
+              src="/images/ambience/studio-interior-2.jpg"
+              alt="Studio Interior 2"
+              className="object-cover w-full h-64 rounded-lg shadow-lg"
+            />
+          </div>
           <button className="absolute bottom-8 right-8 bg-white text-black py-3 px-6 text-sm font-medium flex items-center gap-2 rounded-lg shadow-lg hover:bg-gray-200">
             See More
             <span className="text-xl">→</span>
