@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   const images = [
     "/images/tattoo/dragon-koi-japanese-sleeve.jpg",
     "/images/tattoo/wolf-tattoo-realistic-designs.jpg",
@@ -108,10 +110,16 @@ const Header = () => {
             {slideTexts[currentSlide]}
           </p>
           <div className="mt-6">
-            <button className="px-6 py-3 sm:px-8 sm:py-4 bg-white text-gray-900 font-bold rounded-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 mr-4">
+            <button 
+              onClick={() => navigate('/book-now')}
+              className="px-6 py-3 sm:px-8 sm:py-4 bg-white text-gray-900 font-bold rounded-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 mr-4"
+            >
               Book Now
             </button>
-            <button className="px-6 py-3 sm:px-8 sm:py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-gray-900 transition-all duration-300">
+            <button 
+              onClick={() => navigate('/gallery')}
+              className="px-6 py-3 sm:px-8 sm:py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-gray-900 transition-all duration-300"
+            >
               View Gallery
             </button>
           </div>

@@ -3,10 +3,8 @@ import Header from "../components/Header";
 import AboutOurStudio from "../components/AboutOurStudio";
 import AboutTheArtist from "../components/AboutTheArtist";
 import TattooGallery from "../components/TattooGallery";
-import ArtTshirtGallery from "../components/ArtTshirtsGallery";
-import PrintedTshirtGallery from "../components/PrintedTshirtGallery";
-import ShoesGallery from "../components/ShoesGallery";
-import VideoEditsGallery from "../components/VideoEditsGallery";
+import TshirtCarousel from "../components/TshirtCarousel";
+import ServicesCarousel from "../components/ServicesCarousel";
 import ContactUs from "../components/ContactUs";
 
 const Home = () => {
@@ -36,20 +34,12 @@ const Home = () => {
         <TattooGallery />
       </section>
 
-      <section id="ArtTshirts" className="py-10">
-        <ArtTshirtGallery />
+      <section id="TshirtCollection" className="py-10">
+        <TshirtCarousel />
       </section>
 
-      <section id="PrintedTshirts" className="py-10">
-        <PrintedTshirtGallery />
-      </section>
-
-      <section id="ShoesGallery" className="py-10">
-        <ShoesGallery />
-      </section>
-
-      <section id="VideoEdits" className="py-10">
-        <VideoEditsGallery />
+      <section id="Services" className="py-10">
+        <ServicesCarousel />
       </section>
 
       <section id="ContactUs" className="py-10">

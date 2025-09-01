@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const VideoEdits = () => {
+  const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState('ALL')
   const [selectedService, setSelectedService] = useState('ALL')
   const [isVisible, setIsVisible] = useState(false)
@@ -285,10 +287,16 @@ const VideoEdits = () => {
                   
                   {/* Action Buttons */}
                   <div className="flex gap-3">
-                    <button className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 rounded-xl font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105">
+                    <button 
+                      onClick={() => navigate('/book-now')}
+                      className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 rounded-xl font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+                    >
                       Order Now
                     </button>
-                    <button className="px-4 py-3 border-2 border-purple-500 text-purple-400 rounded-xl hover:bg-purple-500 hover:text-white transition-all duration-300">
+                    <button 
+                      onClick={() => navigate('/book-now')}
+                      className="px-4 py-3 border-2 border-purple-500 text-purple-400 rounded-xl hover:bg-purple-500 hover:text-white transition-all duration-300"
+                    >
                       💬
                     </button>
                   </div>
@@ -349,7 +357,9 @@ const VideoEdits = () => {
                       </li>
                     ))}
                   </ul>
-                  <button className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 ${
+                  <button 
+                    onClick={() => navigate('/book-now')}
+                    className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 ${
                     pkg.popular 
                       ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700'
                       : 'border-2 border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white'
@@ -408,10 +418,16 @@ const VideoEdits = () => {
                 From concept to final cut, we'll make your content stand out.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-10 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25">
+                <button 
+                  onClick={() => navigate('/book-now')}
+                  className="px-10 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25"
+                >
                   Start Your Project
                 </button>
-                <button className="px-10 py-4 border-2 border-purple-500 text-purple-400 font-semibold rounded-xl hover:bg-purple-500 hover:text-white transition-all duration-300 transform hover:scale-105">
+                <button 
+                  onClick={() => navigate('/gallery')}
+                  className="px-10 py-4 border-2 border-purple-500 text-purple-400 font-semibold rounded-xl hover:bg-purple-500 hover:text-white transition-all duration-300 transform hover:scale-105"
+                >
                   View Portfolio
                 </button>
               </div>

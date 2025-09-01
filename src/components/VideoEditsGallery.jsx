@@ -1,27 +1,47 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const imagesData = [
   {
-    name: "Dragon Koi",
-    type: "TAG1",
-    url: "https://sm.pcmag.com/t/pcmag_me/gallery/t/the-best-o/the-best-online-video-editors-for-2024_zrn9.1200.jpg",
-    isAvailable: false,
+    name: "Cinematic Wedding Edit",
+    type: "Wedding",
+    url: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=500&h=300&fit=crop",
+    isAvailable: true,
   },
   {
-    name: "Wolf Art",
-    type: "TAG2",
-    url: "https://sm.pcmag.com/t/pcmag_me/gallery/t/the-best-o/the-best-online-video-editors-for-2024_zrn9.1200.jpg",
-    isAvailable: false,
+    name: "Corporate Promo Video",
+    type: "Corporate",
+    url: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=500&h=300&fit=crop",
+    isAvailable: true,
   },
   {
-    name: "Bald Warrior",
-    type: "TAG2",
-    url: "https://sm.pcmag.com/t/pcmag_me/gallery/t/the-best-o/the-best-online-video-editors-for-2024_zrn9.1200.jpg",
+    name: "Music Video Production",
+    type: "Music",
+    url: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=500&h=300&fit=crop",
+    isAvailable: true,
+  },
+  {
+    name: "Travel Documentary",
+    type: "Travel",
+    url: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=500&h=300&fit=crop",
+    isAvailable: true,
+  },
+  {
+    name: "Product Showcase",
+    type: "Commercial",
+    url: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=500&h=300&fit=crop",
+    isAvailable: true,
+  },
+  {
+    name: "Event Highlights",
+    type: "Event",
+    url: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=500&h=300&fit=crop",
     isAvailable: false,
   },
 ];
 
 const VideoEditsGallery = () => {
+  const navigate = useNavigate();
   const [selectedType, setSelectedType] = useState("ALL");
   const [modalOpen, setModalOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(null);
@@ -43,7 +63,7 @@ const VideoEditsGallery = () => {
       <div className="text-center">
         <h2 className="text-4xl font-bold mb-4">VIDEO EDITS</h2>
         <div className="flex justify-center space-x-4 mb-6">
-          {["ALL", "TAG1", "TAG2", "TAG3"].map((type) => (
+          {["ALL", "Wedding", "Corporate", "Music", "Travel", "Commercial", "Event"].map((type) => (
             <button
               key={type}
               className={`px-4 py-2 rounded ${
@@ -137,12 +157,12 @@ const VideoEditsGallery = () => {
       )}
 
       <div className="text-center my-6">
-        <a
+        <button
+          onClick={() => navigate('/video-edits')}
           className="py-2 px-4 bg-[#d2d9c7] text-black rounded hover:bg-gray-600 transition-all"
-          href="/video-edits"
         >
           View More
-        </a>
+        </button>
       </div>
     </div>
   );

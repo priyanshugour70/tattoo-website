@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Gallery = () => {
+  const navigate = useNavigate();
   const [selectedImage, setSelectedImage] = useState(null);
   const [randomizedImages, setRandomizedImages] = useState([]);
 
@@ -223,10 +225,16 @@ const Gallery = () => {
                 
                 {/* Action Buttons */}
                 <div className="mt-6 space-y-3">
-                  <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105">
+                  <button 
+                    onClick={() => navigate('/book-now')}
+                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105"
+                  >
                     Book Consultation
                   </button>
-                  <button className="w-full border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white py-3 px-6 rounded-lg font-semibold transition-all duration-200">
+                  <button 
+                    onClick={() => navigate('/book-now')}
+                    className="w-full border border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white py-3 px-6 rounded-lg font-semibold transition-all duration-200"
+                  >
                     Get Quote
                   </button>
                 </div>

@@ -7,6 +7,7 @@ import ArtTshirt from "./pages/ArtTshirt";
 import PrintedTshirt from "./pages/PrintedTshirt";
 import Shoes from "./pages/Shoes";
 import VideoEdits from "./pages/VideoEdits";
+import BookNow from "./pages/BookNow";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -27,6 +28,7 @@ const App = () => {
             <Route path="/printed-tshirt" element={<PrintedTshirt />} />
             <Route path="/shoes" element={<Shoes />} />
             <Route path="/video-edits" element={<VideoEdits />} />
+            <Route path="/book-now" element={<BookNow />} />
           </Routes>
         </div>
 

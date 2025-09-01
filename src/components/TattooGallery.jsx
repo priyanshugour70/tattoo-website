@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const imagesData = [
   {
@@ -39,6 +40,7 @@ const imagesData = [
 ];
 
 const TattooGallery = () => {
+  const navigate = useNavigate();
   const [selectedType, setSelectedType] = useState("ALL");
   const [modalOpen, setModalOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(null);
@@ -158,12 +160,12 @@ const TattooGallery = () => {
       )}
 
       <div className="text-center mt-6 sm:mt-8">
-        <a
+        <button
+          onClick={() => navigate('/tattoo')}
           className="inline-block py-2 px-4 sm:py-3 sm:px-6 bg-[#d2d9c7] text-black rounded-lg hover:bg-gray-300 transition-all text-sm sm:text-base font-medium"
-          href="/tattoo"
         >
           View More
-        </a>
+        </button>
       </div>
     </div>
   );

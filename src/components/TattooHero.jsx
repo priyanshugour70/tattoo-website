@@ -1,6 +1,9 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const TattooHero = () => {
+  const navigate = useNavigate();
+  
   return (
     <div className="relative min-h-screen bg-gray-900 text-white overflow-hidden">
       {/* Background Image */}
@@ -31,10 +34,16 @@ const TattooHero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="px-8 py-4 bg-gradient-to-r from-red-600 to-orange-600 text-white font-semibold rounded-lg hover:from-red-700 hover:to-orange-700 transition-all duration-300 transform hover:scale-105">
+              <button 
+                onClick={() => navigate('/book-now')}
+                className="px-8 py-4 bg-gradient-to-r from-red-600 to-orange-600 text-white font-semibold rounded-lg hover:from-red-700 hover:to-orange-700 transition-all duration-300 transform hover:scale-105"
+              >
                 Book Consultation
               </button>
-              <button className="px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-gray-900 transition-all duration-300">
+              <button 
+                onClick={() => navigate('/gallery')}
+                className="px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-gray-900 transition-all duration-300"
+              >
                 View Gallery
               </button>
             </div>

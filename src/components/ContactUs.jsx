@@ -12,11 +12,11 @@ const ContactUs = () => {
   return (
     <div className="contact-page bg-black text-white p-8">
       <div className="text-center">
-        <h1 className="text-3xl font-bold uppercase mb-4">
+        <div className="text-3xl font-bold uppercase mb-4">
           <h1 className="text-5xl font-semibold uppercase tracking-wide">
             CONTACT
           </h1>
-        </h1>
+        </div>
         <p className="mb-8">Visit us or send us an email</p>
       </div>
 
