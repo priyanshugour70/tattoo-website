@@ -6,7 +6,7 @@ const Header = () => {
   const images = [
     "/images/tattoo/dragon-koi-japanese-sleeve.jpg",
     "/images/tattoo/wolf-tattoo-realistic-designs.jpg",
-    "/images/tattoo/mandala-tattoo-design-ideas.jpg",
+    "/images/tattoo/mandala-upper-leg-woman-tattoo.jpg",
     "/images/tattoo/butterfly-tattoo-women-designs.jpg",
   ];
   

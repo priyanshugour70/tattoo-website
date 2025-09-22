@@ -10,6 +10,7 @@ import VideoEdits from "./pages/VideoEdits";
 import BookNow from "./pages/BookNow";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import FloatingContact from "./components/FloatingContact";
 
 const App = () => {
   return (
@@ -34,6 +35,9 @@ const App = () => {
 
         {/* Footer */}
         <Footer />
+
+        {/* Floating Contact */}
+        <FloatingContact />
       </div>
     </Router>
   );

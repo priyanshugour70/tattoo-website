@@ -11,7 +11,7 @@ const AboutOurStudio = () => {
         {/* Left Section */}
         <div className="lg:w-1/2 p-8">
           <h1 className="text-5xl font-bold mb-8">About Our Studio.</h1>
-          <div className="bg-white text-gray-900 p-6 rounded-lg shadow-lg">
+          <div className="text-white text-gray-900 p-6 rounded-lg shadow-lg">
             <p className="text-lg leading-7 mb-4">
               Welcome to <strong>"The House of Tattoos,"</strong> a space born
               from passion, dedication, and years of hard work. Our founder has
@@ -31,12 +31,12 @@ const AboutOurStudio = () => {
         <div className="lg:w-1/2 relative">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
             <img
-              src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=500&h=400&fit=crop"
+              src="/images/about/founder.png"
               alt="Modern Studio Setup"
               className="object-cover w-full h-64 rounded-lg shadow-lg"
             />
             <img
-              src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=500&h=400&fit=crop"
+              src="/images/about/studio.png"
               alt="Artistic Workspace"
               className="object-cover w-full h-64 rounded-lg shadow-lg"
             />
